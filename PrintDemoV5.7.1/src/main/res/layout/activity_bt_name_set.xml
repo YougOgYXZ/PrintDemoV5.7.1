@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="5dp" >
+
+    <ScrollView
+        android:id="@+id/sv_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <include
+                android:id="@+id/ll_headerview_settingactivity"
+                layout="@layout/heardview_layout" />
+
+            <TextView
+                android:id="@+id/tv_device_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_headerview_settingactivity"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/printerName"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tv_printer_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_device_name"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/printerAddress"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/spinner_interface_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_printer_address"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp" />
+
+            <Button
+                android:id="@+id/btn_search_devices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/spinner_interface_type"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/openConnection"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_scan_and_connect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/btn_search_devices"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/scan_connect"
+                android:visibility="gone"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_paper_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_scan_and_connect"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="9dp"
+                android:text="蓝牙名称设置："
+                android:textSize="16sp" />
+            <RelativeLayout
+                android:id="@+id/rl_set_bt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_paper_size"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_set_bt_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="9dp"
+                    android:text="蓝牙名称:"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/et_set_bt_name"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tv_set_bt_name"
+                    android:hint="请输入需要设置的蓝牙名称"/>
+
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg__select_paper_size"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_paper_size"
+                android:layout_below="@+id/tv_paper_size"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_58mm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="58mm" />
+
+                <RadioButton
+                    android:id="@+id/rb_80mm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="80mm" />
+
+                <RadioButton
+                    android:id="@+id/rb_100mm"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="100mm" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tv_printer_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rg__select_paper_size"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:text="@string/printer_type"
+                android:textSize="16sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_printer_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_printer_type"
+                android:layout_below="@+id/tv_printer_type"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_normal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/printer_normal" />
+
+                <RadioButton
+                    android:id="@+id/rb_t7"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/printer_t7" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_selfprint_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_set_bt_name"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="手动设置"></Button>
+            <Button
+                android:id="@+id/btn_selfchekingpage_print"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_selfprint_test"
+                android:text="一键设置" >
+            </Button>
+
+            <Button
+                android:id="@+id/btn_status_test"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_selfchekingpage_print"
+                android:visibility="gone"
+                android:text="@string/Settingactivity_status_test" />
+
+            <TextView
+                android:id="@+id/tv_cut_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_status_test"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:text="@string/cut_test"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_cut_test"
+                android:layout_marginTop="5dp"
+                android:visibility="gone"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="halfCut"
+                    android:text="@string/half_cut" >
+                </Button>
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="allCut"
+                    android:text="@string/all_cut" >
+                </Button>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
